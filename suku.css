@@ -7,14 +7,20 @@
     --danger: #ff3b30;
     --info: #5856d6;
     --link: #007aff;
+    --snack: #313131;
 
     --root: #ffffff;
     --background: #f1f5fa;
     --text-root: #000000;
     --text-alter: #ffffff;
+    --code: #313131;
     --border: #8e8e93;
+    --nav: #ffffff;
 
-    --selection: rgba(0,0,0,.25);
+    --shadow-light: 4px 0 7px rgba(0,0,0,.0625);
+    --shadow-medium: 5px 0 15px rgba(0,0,0,.0875);
+    --shadow-intense: 7px 0 20px rgba(0,0,0,.115);
+    --selection: rgba(0,123,255,.25);
 
     --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --code-font: Consolas, monospace , Roboto, Helvatic Neue;
@@ -28,13 +34,22 @@
     --h6: 18px;
     --p: 16px;
 
-    --small-padding: 5px;
-    --medium-padding: 10px;
-    --large-padding: 15px;
+    --side-width: 300px;
+    --container: 1160px;
+    --nav-padding: 5px 8.75%;
+    --nav-height: 58px;
 
-    --small-margin: 5px;
-    --medium-margin: 10px;
-    --large-margin: 15px;
+    --padding-small: 5px;
+    --padding-medium: 10px;
+    --padding-large: 15px;
+
+    --margin-small: 5px;
+    --margin-medium: 10px;
+    --margin-large: 15px;
+
+    --transition-slow: .35s;
+    --transition-medium: .3s;
+    --transition-fast: .25s;
 }
 
 body {
@@ -44,8 +59,69 @@ body {
 
 * {box-sizing: border-box;}
 
-h1,h2,h3,h4,h5,h6,p,b,u,i,span,div {
+h1,h2,h3,h4,h5,h6,p,b,u,i,span,div,section,main,nav,aside,blockquote,form,footer,ruby,mark,small,strong,table,tbody,thead,th,tr,tt,tfoot,sub,strike,ul,li {
     cursor:default;
+    font-family: var(--font);
+    font-weight: normal;
+    margin:0;
 }
 
+a,input,output,option,select {
+    font-family: var(--font);
+    font-weight: normal;
+}
+
+h1, *[h1] {font-size: var(--h1);}
+h2, *[h2] {font-size: var(--h2);}
+h3, *[h3] {font-size: var(--h3);}
+h4, *[h4] {font-size: var(--h4);}
+h5, *[h5] {font-size: var(--h5);}
+h6, *[h6] {font-size: var(--h6);}
+p, div, *[p], body {font-size: var(--p);}
+
 ::selection, ::-webkit-selection { background-color: var(--selection); }
+
+nav, [nav] {
+    width: 100%;
+    height: var(--nav-height);
+    padding: var(--nav-padding);
+    background-color: var(--nav);
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-medium);
+    transition: box-shadow var(--transition-medium);
+}
+
+nav:hover, [nav]:hover {
+    box-shadow: var(--shadow-intense);
+}
+
+nav > * {
+    display:flex;
+    flex:1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+nav > *:first-child {
+    text-align: left;
+    justify-content: flex-start;
+}
+
+nav > *:last-child {
+    text-align: right;
+    justify-content: flex-end;
+}
+
+main, [main], [container] {
+    display:flex;
+    width: var(--main);
+    flex-direction: column;
+    width: var(--container);
+    margin-left:auto;
+    margin-right:auto;
+}
