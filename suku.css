@@ -1,0 +1,51 @@
+/* Config */
+:root {
+    --primary: #007aff;
+    --secondary: #5ac8fa;
+    --success: #4cd964;
+    --warning: #ffcc00;
+    --danger: #ff3b30;
+    --info: #5856d6;
+    --link: #007aff;
+
+    --root: #ffffff;
+    --background: #f1f5fa;
+    --text-root: #000000;
+    --text-alter: #ffffff;
+    --border: #8e8e93;
+
+    --selection: rgba(0,0,0,.25);
+
+    --font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --code-font: Consolas, monospace , Roboto, Helvatic Neue;
+
+    --title: 60px;
+    --h1: 48px;
+    --h2: 36px;
+    --h3: 28px;
+    --h4: 24px;
+    --h5: 21px;
+    --h6: 18px;
+    --p: 16px;
+
+    --small-padding: 5px;
+    --medium-padding: 10px;
+    --large-padding: 15px;
+
+    --small-margin: 5px;
+    --medium-margin: 10px;
+    --large-margin: 15px;
+}
+
+body {
+    margin:0;
+    width:100%;
+}
+
+* {box-sizing: border-box;}
+
+h1,h2,h3,h4,h5,h6,p,b,u,i,span,div {
+    cursor:default;
+}
+
+::selection, ::-webkit-selection { background-color: var(--selection); }
